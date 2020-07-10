@@ -251,3 +251,24 @@ pre {
   color: #0e101c;
   border-bottom: 2px solid !important;
 }
+
+.dark-mode {
+  color:black;
+  background-color:lightpink;
+}
+
+.dark-form{
+  color:black;
+  background-color: darkgreen;
+}
+
+.toggle {
+  height: 18px;
+  /* left: 0; */
+  position: absolute;
+  transition: 0.2s;
+}
+
+.toggled {
+  color: lightgreen;
+}
