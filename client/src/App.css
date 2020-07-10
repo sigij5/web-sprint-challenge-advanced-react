@@ -272,3 +272,9 @@ pre {
 .toggled {
   color: lightgreen;
 }
+
+.search{
+  width:30%;
+  margin: 0% 20%;
+  text-align: center;
+}

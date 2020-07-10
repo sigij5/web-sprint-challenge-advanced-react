@@ -7,7 +7,8 @@ export default class PlantList extends Component {
     super();
 
     this.state = {
-      plants: []
+      plants: [],
+      searchText: ''
     }
   }
 
@@ -21,6 +22,22 @@ export default class PlantList extends Component {
     })
   }
 
+  // componentDidUpdate(prevState) {
+  //   if (this.state.searchText !== prevState.searchText) {
+  //     this.setState({
+  //       plants: plants.filter(plant=>{
+  //         if(!searchText || plant.name.includes(searchText)){
+  //           return plant} return false
+  //       })
+  //     })
+  //   }
+  // }
+
+  // handleSearchText = e => {
+  //   this.setState({
+  //     searchText: e.target.value
+  //   })
+  // };
   // when the component mounts:
   //   - fetch data from the server endpoint - http://localhost:3333/plants
   //   - set the returned plants array to this.state.plants
@@ -29,6 +46,12 @@ export default class PlantList extends Component {
   render() {
     return (
       <main className="plant-list">
+          <input 
+            type="text"
+            onChange={this.handleSearchText}
+            placeholder='Search'
+            className='search'
+          />
         {this.state?.plants?.map((plant) => (
           <div className="plant-card" key={plant.id}>
             <img className="plant-image" src={plant.img} alt={plant.name} />
